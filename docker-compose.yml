@@ -1,0 +1,23 @@
+
+version: '3.9'
+
+services:
+  script-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: simplon_test_data-script-runner
+    volumes:
+      - ./data:/app/data         # base SQLite
+      - ./fichiers_csv:/app/fichiers_csv   # fichiers CSV
+    depends_on:
+      - sqlite
+    command: python analyser.py  # ou ton script principal
+
+  sqlite:
+    image: nouchka/sqlite3:latest  # image légère SQLite avec CLI
+    container_name: simplon_test_data-sqlite
+    volumes:
+      - ./data:/root/db            # base SQLite locale
+    stdin_open: true
+    tty: true
