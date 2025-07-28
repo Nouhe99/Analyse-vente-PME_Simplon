@@ -1,9 +1,9 @@
 import sqlite3
+from tabulate import tabulate  # Ajoute cette importation
 
 print("Hello, world! Je suis prête pour le Data Engineering.")
 
-
-db_path = "/data/pme_ventes.db"
+db_path = "data/pme_ventes.db"
 conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 
@@ -40,10 +40,17 @@ CREATE TABLE IF NOT EXISTS Ventes (
 for table in ['Magasins', 'Produits', 'Ventes']:
     cursor.execute(f"PRAGMA table_info({table})")
     columns = cursor.fetchall()
-    print(f"Table {table} colonnes:")
-    for col in columns:
-        print(f" - {col[1]} ({col[2]})")
+    print(f"\nStructure de la table {table}:")
+    print(tabulate(columns, headers=["cid", "name", "type", "notnull", "dflt_value", "pk"], tablefmt="github"))
 
+    # Affiche les 5 premières lignes de chaque table
+    cursor.execute(f"SELECT * FROM {table} LIMIT 5")
+    rows = cursor.fetchall()
+    if rows:
+        print(f"\nExemple de données ({table}):")
+        print(tabulate(rows, headers=[col[1] for col in columns], tablefmt="github"))
+    else:
+        print(f"\nAucune donnée dans la table {table}.")
 
 conn.commit()
 conn.close()
