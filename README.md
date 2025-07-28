@@ -34,7 +34,7 @@ Le projet utilise **deux services** via Docker Compose :
 
 ```bash
 1. Cloner le projet
-git clone https://github.com/Nouhe99/Nouhe99-Analyse-vente-PME_Simplon.git
+git clone https://github.com/Nouhe99/Analyse-vente-PME_Simplon.git
 cd Simplon_Test_DATA
 
 2. Construire et exécuter avec Docker Compose
