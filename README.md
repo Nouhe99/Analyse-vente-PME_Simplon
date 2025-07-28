@@ -14,27 +14,6 @@ Analyser les ventes d’une PME à partir de trois fichiers CSV (`ventes.csv`, `
 
 ---
 
-##  Structure du projet
-
-Simplon_Test_DATA/
-│
-├── Dockerfile # Image pour exécuter les scripts Python
-├── docker-compose.yml # Orchestration multi-services
-│
-├── fichiers_csv/ # Fichiers CSV d'origine
-│ ├── ventes.csv
-│ ├── produits.csv
-│ └── magasins.csv
-│
-├── data/ # Contiendra la base de données SQLite (pme_vente.db)
-│
-├── import_data.py # Insertion des données dans SQLite
-├── analyser.py # Analyse des données (ex: ventes totales par produit)
-├── verify_import.py # Vérification des données importées
-└── README.md # Ce fichier
-
-
----
 
 ##  Architecture Docker
 
@@ -52,10 +31,9 @@ Le projet utilise **deux services** via Docker Compose :
 
 ##  Installation & Lancement
 
-1. Cloner le projet
-
 ```bash
-git clone https://github.com/ton-projet/Simplon_Test_DATA.git
+1. Cloner le projet
+git clone https://github.com/Nouhe99/Nouhe99-Analyse-vente-PME_Simplon.git
 cd Simplon_Test_DATA
 
 2. Construire et exécuter avec Docker Compose
@@ -98,4 +76,4 @@ Docker & Docker Compose
 Candidate pour la formation Data Engineer — Simplon.co
 
 📬 Contact
-Pour toute question ou retour : nouha.chebbi@email.com (ou ton LinkedIn/GitHub si tu veux ajouter)
+Pour toute question ou retour : chebbi.nouhe@gmail.com
