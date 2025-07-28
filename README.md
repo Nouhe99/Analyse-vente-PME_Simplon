@@ -1,6 +1,7 @@
 #  Projet Data Engineer - Analyse des Ventes d'une PME
 
-Ce projet a été réalisé dans le cadre de la journée de sélection pour le parcours Data Engineer chez **Simplon.co**.
+- Ce projet permet **d'analyser les ventes d'une PME**. 
+ - Réalisé dans le cadre de la journée de sélection pour le parcours Data Engineer chez **Simplon.co**.
 
 ---
 
@@ -50,27 +51,19 @@ Modifier
 docker-compose run --rm script-runner python import_data.py
 docker-compose run --rm script-runner python verify_import.py
 
- Analyses réalisées
+Analyses réalisées
 Le fichier analyser.py permet d'obtenir :
-
-Le total des ventes par produit
-
-Le chiffre d'affaires par magasin
-
-Le nombre de ventes par date
-
-
+   - Le total des ventes par produit
+   - Le chiffre d'affaires par magasin
+   - Le nombre de ventes par date
 
 🛠️ Dépendances
 Python 3.10
-
 pandas
-
 requests (optionnel)
-
 SQLite3
-
 Docker & Docker Compose
+
 
 👩‍💻Projet par : Nouha Chebbi
 Candidate pour la formation Data Engineer — Simplon.co
