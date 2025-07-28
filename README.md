@@ -38,16 +38,12 @@ git clone https://github.com/Nouhe99/Analyse-vente-PME_Simplon.git
 cd Simplon_Test_DATA
 
 2. Construire et exécuter avec Docker Compose
-bash
-Copier
-Modifier
+
 docker-compose up --build
 ⚠️ Le script principal analyser.py sera exécuté automatiquement.
 
 3. Exécuter un script manuellement
-bash
-Copier
-Modifier
+
 docker-compose run --rm script-runner python import_data.py
 docker-compose run --rm script-runner python verify_import.py
 
